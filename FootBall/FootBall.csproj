@@ -11,7 +11,7 @@
     <AssemblyName>FootBall</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.22621.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -158,7 +158,9 @@
     <Content Include="Assets\App\Square44x44Logo.targetsize-256.png" />
     <Content Include="Assets\App\Square44x44Logo.targetsize-32.png" />
     <Content Include="Assets\App\Square44x44Logo.targetsize-48.png" />
-    <Content Include="Assets\Images\ballImg.jpeg" />
+    <Content Include="Assets\Images\BallImg.jpg" />
+    <Content Include="Assets\Images\CrowdImage.jpg" />
+    <Content Include="Assets\Images\GateImg.jpeg" />
     <Content Include="Assets\Images\clock.png" />
     <Content Include="Assets\Images\fieldImg.jpeg" />
     <Content Include="Assets\Images\footballIcon.png" />

@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    >
+    Background="LightBlue">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -40,6 +40,13 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         
+        <TextBlock Foreground="Black" Text="Menu" FontSize="90" Grid.Row="0" Grid.Column="6" Grid.RowSpan="2" Grid.ColumnSpan="4"></TextBlock>
+        <Button Foreground="Black" Content="Play" FontSize="90" Grid.Row="2" Grid.Column="6" Grid.RowSpan="2" Grid.ColumnSpan="2"></Button>
+        <Button Foreground="Black" Content="Options" FontSize="85" Grid.Row="4" Grid.Column="6" Grid.RowSpan="2" Grid.ColumnSpan="3"></Button>
+        <Button Foreground="Black" Content="Help" FontSize="85" Grid.Row="6" Grid.Column="6" Grid.RowSpan="2" Grid.ColumnSpan="3"></Button>
+        <Button Foreground="Black" Content="Exit" FontSize="85" Grid.Row="8" Grid.Column="6" Grid.RowSpan="2" Grid.ColumnSpan="3"></Button>
+
         
+
     </Grid>
 </Page>
