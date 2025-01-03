@@ -65,12 +65,7 @@
             
 
         </Canvas>
-        <Image x:Name="CrowdImg1" Source="/Assets/Images/CrowdImage.jpg" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3" />
-        <Image x:Name="CrowdImg2" Source="/Assets/Images/CrowdImage.jpg" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="4" Grid.RowSpan="3" />
-        <Image x:Name="CrowdImg3" Source="/Assets/Images/CrowdImage.jpg" Grid.Row="9" Grid.Column="4" Grid.ColumnSpan="4" Grid.RowSpan="3" />
-        <Image x:Name="CrowdImg4" Source="/Assets/Images/CrowdImage.jpg" Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="4" Grid.RowSpan="3" />
-        <Image x:Name="CrowdImg5" Source="/Assets/Images/CrowdImage.jpg" Grid.Row="9" Grid.Column="8" Grid.ColumnSpan="4" Grid.RowSpan="3" />
-        <Image x:Name="CrowdImg6" Source="/Assets/Images/CrowdImage.jpg" Grid.Row="9" Grid.Column="10" Grid.ColumnSpan="4" Grid.RowSpan="3" />
+       
         
         
 
