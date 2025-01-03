@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FootBall.Objects;
+using FootBall.Services;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +24,15 @@ namespace FootBall.Pages
     /// </summary>
     public sealed partial class GamePage : Page
     {
+        private GameManager Manager;
         public GamePage()
         {
             this.InitializeComponent();
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            Manager = new GameManager(fieldCanvas);
+    }
     }
 }
