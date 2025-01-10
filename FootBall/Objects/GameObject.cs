@@ -11,8 +11,8 @@ namespace FootBall
 //המחלקה תכלול את המכנה המשותף לכל המחלקות העתידיות
     public abstract class GameObject
     {
-        private double _x;//מיקום אופקי
-        private double _y;//מיקום אנכי
+        protected double _x;//מיקום אופקי
+        protected double _y;//מיקום אנכי
         private Image _objectImage;
         private Canvas _field;
         public GameObject(double x,double y,string fileName ,Canvas field,double size)
@@ -27,8 +27,9 @@ namespace FootBall
             Render();
         }
 
-        private void Render()//הפעולה קובעת את מיקום הדמות ביחס לשולי הקנבס
+        public virtual void Render()//הפעולה קובעת את מיקום הדמות ביחס לשולי הקנבס
         {
+            
             Canvas.SetLeft(_objectImage, _x);
             Canvas.SetTop(_objectImage, _y);
         }

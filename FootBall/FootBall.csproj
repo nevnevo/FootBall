@@ -119,6 +119,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Objects\Ball.cs" />
+    <Compile Include="Objects\Fan.cs" />
+    <Compile Include="Objects\GameMovingObject.cs" />
     <Compile Include="Objects\GameObject.cs" />
     <Compile Include="Objects\Goal.cs" />
     <Compile Include="Pages\GamePage.xaml.cs">
@@ -161,7 +164,10 @@
     <Content Include="Assets\App\Square44x44Logo.targetsize-256.png" />
     <Content Include="Assets\App\Square44x44Logo.targetsize-32.png" />
     <Content Include="Assets\App\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\Fans\Fan1Img.png" />
+    <Content Include="Assets\Fans\Fan2Img.png" />
     <Content Include="Assets\Goals\RightGoalImg.jpeg" />
+    <Content Include="Assets\Ball\Ball.png" />
     <Content Include="Assets\Images\BallImg.jpg" />
     <Content Include="Assets\Images\CrowdImage.jpg" />
     <Content Include="Assets\Goals\LeftGoalImg.jpeg" />
@@ -192,6 +198,7 @@
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
