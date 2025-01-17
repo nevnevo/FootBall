@@ -27,7 +27,7 @@ namespace FootBall.Services
             _gameObjects = new List<GameObject>();
             _gameObjects.Add(new Goal(10,220, Goal.DirectionType.Left, _field, 50));
             _gameObjects.Add(new Goal(_field.ActualWidth-10-50, 220, Goal.DirectionType.Right, _field, 50));
-            _gameObjects.Add(new Ball(400,200,"Ball/Ball.png",_field,50));
+            _gameObjects.Add(new Ball(400,200,"Ball/ball.gif",_field,50));
             CreateFans();
         }
 
@@ -44,13 +44,13 @@ namespace FootBall.Services
         {
             Random random = new Random();
             int x=10;
-            int y=-30;
+            int y=-80;
             double y2=_field.ActualHeight;
 
-            for(int i=0; i < 17; i++)
+            for(int i=0; i < 14; i++)
             {
-                _gameObjects.Add(new Fan(x,y,  _field, 80, (Fan.side)random.Next(2)));
-                _gameObjects.Add(new Fan(x,y2-60,  _field, 80, (Fan.side)random.Next(2)));
+                _gameObjects.Add(new Fan(x+(i*10),y,  _field, 80, (Fan.side)random.Next(2)));
+                _gameObjects.Add(new Fan(x + (i * 10), y2-10,  _field, 80, (Fan.side)random.Next(2)));
                 x += 55;
             }
 

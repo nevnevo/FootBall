@@ -27,6 +27,7 @@ namespace FootBall.Objects
             _speedX += _accelerationX;//שינוי מהירות
             _speedY += _accelerationY;
 
+
             base.Render();              //מציירת את הדמות במיקום החדש
         } 
         private void Stop()

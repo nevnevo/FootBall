@@ -13,8 +13,8 @@ namespace FootBall
     {
         protected double _x;//מיקום אופקי
         protected double _y;//מיקום אנכי
-        private Image _objectImage;
-        private Canvas _field;
+        protected Image _objectImage;
+        protected Canvas _field;
         public GameObject(double x,double y,string fileName ,Canvas field,double size)
         {
             _x = x;
