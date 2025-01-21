@@ -124,7 +124,9 @@
     <Compile Include="Objects\GameMovingObject.cs" />
     <Compile Include="Objects\GameObject.cs" />
     <Compile Include="Objects\Goal.cs" />
+    <Compile Include="Objects\LeftPlayer.cs" />
     <Compile Include="Objects\Player.cs" />
+    <Compile Include="Objects\RightPlayer.cs" />
     <Compile Include="Pages\GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
     </Compile>
@@ -166,6 +168,7 @@
     <Content Include="Assets\App\Square44x44Logo.targetsize-32.png" />
     <Content Include="Assets\App\Square44x44Logo.targetsize-48.png" />
     <Content Include="Assets\Ball\ball.gif" />
+    <Content Include="Assets\Ball\ball2.png" />
     <Content Include="Assets\Fans\Fan1Img.png" />
     <Content Include="Assets\Fans\Fan2Img.png" />
     <Content Include="Assets\Goals\RightGoalImg.jpeg" />
@@ -175,10 +178,12 @@
     <Content Include="Assets\Images\clock.png" />
     <Content Include="Assets\Images\fieldImg.jpeg" />
     <Content Include="Assets\Images\footballIcon.png" />
-    <Content Include="Assets\Players\CatIdle.gif" />
-    <Content Include="Assets\Players\CatRun.gif" />
-    <Content Include="Assets\Players\DogIdle.gif" />
-    <Content Include="Assets\Players\DogRun.gif" />
+    <Content Include="Assets\Players\Cat\CatIdle.gif" />
+    <Content Include="Assets\Players\Cat\CatRun.gif" />
+    <Content Include="Assets\Players\Cat\CatRunRight.gif" />
+    <Content Include="Assets\Players\Dog\DogIdle.gif" />
+    <Content Include="Assets\Players\Dog\DogRun.gif" />
+    <Content Include="Assets\Players\Dog\DogRunLeft.gif" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>

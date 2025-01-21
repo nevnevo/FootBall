@@ -27,7 +27,10 @@ namespace FootBall.Services
             _gameObjects = new List<GameObject>();
             _gameObjects.Add(new Goal(10,220, Goal.DirectionType.Left, _field, 50));
             _gameObjects.Add(new Goal(_field.ActualWidth-10-50, 220, Goal.DirectionType.Right, _field, 50));
-            _gameObjects.Add(new Ball(400,200,"Ball/ball.gif",_field,50));
+            _gameObjects.Add(new Ball(400,200,"Ball/ball2.png",_field,50));
+
+            _gameObjects.Add(new LeftPlayer((_field.ActualWidth/2)+50, 200, "Players/Cat/CatIdle.gif", _field, 70));
+            _gameObjects.Add(new LeftPlayer((_field.ActualWidth/2)-(70+50), 200, "Players/Dog/DogIdle.gif", _field, 70));
             CreateFans();
         }
 
