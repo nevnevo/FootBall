@@ -21,6 +21,8 @@ namespace FootBall.Objects
 
             _speedY = -5;
             _objectImage.Height = size;
+            
+
         }
 
         public override void Render()

@@ -11,6 +11,7 @@ namespace FootBall.Services
 {
     public class GameManager//המחלקה תנהל את המשחק בין היתר היא תיצור את כל הדמויות
     {
+        public static GameEvents GameEvents { get; private set; } = new GameEvents();
         private Canvas _field;
         private List<GameObject> _gameObjects;
         private DispatcherTimer _runTimer;
@@ -32,6 +33,22 @@ namespace FootBall.Services
             _gameObjects.Add(new LeftPlayer((_field.ActualWidth/2)+50, 200, "Players/Cat/CatIdle.gif", _field, 70));
             _gameObjects.Add(new LeftPlayer((_field.ActualWidth/2)-(70+50), 200, "Players/Dog/DogIdle.gif", _field, 70));
             CreateFans();
+
+            Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;
+            Window.Current.CoreWindow.KeyUp += CoreWindow_KeyUp;
+        }
+
+        private void CoreWindow_KeyUp(Windows.UI.Core.CoreWindow sender, Windows.UI.Core.KeyEventArgs args)
+        {
+            
+        }
+
+        private void CoreWindow_KeyDown(Windows.UI.Core.CoreWindow sender, Windows.UI.Core.KeyEventArgs args)
+        {
+           if(GameEvents.OnKeyPress!=null)
+            {
+                
+            }
         }
 
         private void _runTimer_Tick(object sender, object e)
