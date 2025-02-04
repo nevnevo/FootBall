@@ -31,7 +31,7 @@ namespace FootBall.Services
             _gameObjects.Add(new Ball(400,200,"Ball/ball2.png",_field,50));
 
             _gameObjects.Add(new LeftPlayer((_field.ActualWidth/2)+50, 200, "Players/Cat/CatIdle.gif", _field, 70));
-            _gameObjects.Add(new LeftPlayer((_field.ActualWidth/2)-(70+50), 200, "Players/Dog/DogIdle.gif", _field, 70));
+            _gameObjects.Add(new RightPlayer((_field.ActualWidth/2)-(70+50), 200, "Players/Dog/DogIdle.gif", _field, 70));
             CreateFans();
 
             Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;
@@ -40,14 +40,17 @@ namespace FootBall.Services
 
         private void CoreWindow_KeyUp(Windows.UI.Core.CoreWindow sender, Windows.UI.Core.KeyEventArgs args)
         {
-            
+            if (GameEvents.OnKeyLeave != null)
+            {
+                GameEvents.OnKeyLeave(args.VirtualKey);//האירוע שהגדרנו
+            }
         }
-
+        //הפעולה תתבצע באופן אוטומטי כאשר משתמש ילחץ על מקש כלשהו
         private void CoreWindow_KeyDown(Windows.UI.Core.CoreWindow sender, Windows.UI.Core.KeyEventArgs args)
         {
            if(GameEvents.OnKeyPress!=null)
             {
-                
+                GameEvents.OnKeyPress(args.VirtualKey);//האירוע שהגדרנו
             }
         }
 
