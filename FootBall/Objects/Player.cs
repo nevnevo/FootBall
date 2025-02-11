@@ -32,5 +32,42 @@ namespace FootBall.Objects
         {
             
         }
+        //הפעולה מתאימה את מצב הדמות למשתנה
+        protected virtual void MatchImageToState()
+        {
+
+        }
+        protected void GoLeft()
+        {
+            var state = PlayerState;
+            _speedX -= Constants.Speed;
+            PlayerState = StateType.runLeft;
+            if (state != PlayerState)//switch gif only if state have changed 
+                MatchImageToState();
+        }
+        protected void GoRight()
+        {
+            var state = PlayerState;
+            _speedX = Constants.Speed;
+            PlayerState = StateType.runRight;
+            if (state != PlayerState)
+                MatchImageToState();
+        }
+        protected void GoUp()
+        {
+            var state = PlayerState;
+            _speedY = Constants.Speed;
+        
+            if (state != PlayerState)
+                MatchImageToState();
+        }
+        protected void GoDown()
+        {
+            var state = PlayerState;
+            _speedY -= Constants.Speed;
+           
+            if (state != PlayerState)
+                MatchImageToState();
+        }
     }
 }

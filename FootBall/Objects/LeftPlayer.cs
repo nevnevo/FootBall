@@ -14,9 +14,13 @@ namespace FootBall.Objects
         {
             _objectImage.Height = size * 1.536;
         }
+        protected override void MatchImageToState()
+        {
+            
+        }
         protected override void Move(VirtualKey key)
         {
-            if()
+            
         }
     }
 }
