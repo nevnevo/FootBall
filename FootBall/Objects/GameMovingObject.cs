@@ -38,6 +38,6 @@ namespace FootBall.Objects
             _accelerationX = 0;
     }
 
-        
+       
     }
 }

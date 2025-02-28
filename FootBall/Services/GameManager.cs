@@ -28,10 +28,10 @@ namespace FootBall.Services
             _gameObjects = new List<GameObject>();
             _gameObjects.Add(new Goal(10,220, Goal.DirectionType.Left, _field, 50));
             _gameObjects.Add(new Goal(_field.ActualWidth-10-50, 220, Goal.DirectionType.Right, _field, 50));
-            _gameObjects.Add(new Ball(400,200,"Ball/ball2.png",_field,50));
+            _gameObjects.Add(new Ball(480,250,"Ball/ball2.png",_field,50));
 
-            _gameObjects.Add(new LeftPlayer((_field.ActualWidth/2)+50, 200, "Players/Cat/CatIdle.gif", _field, 70));
-            _gameObjects.Add(new RightPlayer((_field.ActualWidth/2)-(70+50), 200, "Players/Dog/DogIdle.gif", _field, 70));
+            _gameObjects.Add(new RightPlayer((_field.ActualWidth/2)+50, 200, "Players/Cat/CatIdle.gif", _field, 70));
+            _gameObjects.Add(new LeftPlayer((_field.ActualWidth/2)-(70+50), 200, "Players/Dog/DogIdle.gif", _field, 70));
             CreateFans();
 
             Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;
@@ -61,6 +61,7 @@ namespace FootBall.Services
                 if (obj is GameMovingObject moveObj)
                     moveObj.Render();
             }
+            CheckCollisional();
         }
 
         private void CreateFans()
@@ -77,6 +78,21 @@ namespace FootBall.Services
                 x += 55;
             }
 
+        }
+
+        private void CheckCollisional()
+        {
+            for(int i = 0; i < _gameObjects.Count; i++)
+            {
+                for(int j = 0; j < _gameObjects.Count; j++)
+                {
+                    if(i!=j && _gameObjects[i].Collisional && _gameObjects[j].Collisional
+                        && !RectHelper.Intersect(_gameObjects[i].Rect(), _gameObjects[j].Rect()).IsEmpty)
+                    {
+                        _gameObjects[i].Collide(_gameObjects[j]);
+                    }
+                }
+            }
         }
     }
 }

@@ -40,7 +40,7 @@ namespace FootBall.Objects
         protected void GoLeft()
         {
             var state = PlayerState;
-            _speedX -= Constants.Speed;
+            _speedX =- Constants.Speed;
             PlayerState = StateType.runLeft;
             if (state != PlayerState)//switch gif only if state have changed 
                 MatchImageToState();
@@ -56,7 +56,7 @@ namespace FootBall.Objects
         protected void GoUp()
         {
             var state = PlayerState;
-            _speedY = Constants.Speed;
+            _speedY = -Constants.Speed;
         
             if (state != PlayerState)
                 MatchImageToState();
@@ -64,10 +64,21 @@ namespace FootBall.Objects
         protected void GoDown()
         {
             var state = PlayerState;
-            _speedY -= Constants.Speed;
+            _speedY = Constants.Speed;
            
             if (state != PlayerState)
                 MatchImageToState();
         }
+
+        public override void Collide(GameObject otherObject)
+        {
+            if(otherObject is Ball ball)
+            {
+                ball.SetSpeed(_speedX, _speedY);
+            }
+        }
+
+
+
     }
 }

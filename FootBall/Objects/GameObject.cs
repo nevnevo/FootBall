@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Foundation;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 
@@ -15,6 +16,9 @@ namespace FootBall
         protected double _y;//מיקום אנכי
         protected Image _objectImage;
         protected Canvas _field;
+
+        public bool Collisional { get; set; } = true;
+
         public GameObject(double x,double y,string fileName ,Canvas field,double size)
         {
             _x = x;
@@ -34,9 +38,18 @@ namespace FootBall
             Canvas.SetTop(_objectImage, _y);
         }
 
+        public virtual Rect Rect()
+        {
+            return new Rect(_x, _y, _objectImage.Width, _objectImage.Height);
+        }
+
         protected void SetImage(string fileName)
         {
             _objectImage.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{fileName}"));
+        }
+        public virtual void Collide(GameObject otherObject)
+        {
+
         }
     }
 }
