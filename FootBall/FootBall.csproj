@@ -138,6 +138,7 @@
     <Compile Include="Services\ControlKeys.cs" />
     <Compile Include="Services\GameEvents.cs" />
     <Compile Include="Services\GameManager.cs" />
+    <Compile Include="Services\RectangleHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

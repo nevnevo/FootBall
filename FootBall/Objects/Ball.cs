@@ -53,7 +53,7 @@ namespace FootBall.Objects
             else
                 _accelerationY = 0;
 
-            if(Math.Abs)
+            
         }
 
         public void SetSpeed(double speedX, double speedY)
