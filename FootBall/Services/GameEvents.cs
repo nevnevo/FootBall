@@ -12,6 +12,7 @@ namespace FootBall.Services
         public Action<VirtualKey> OnKeyPress;
         public Action<VirtualKey> OnKeyLeave;
         public Action OnMousePress;
+        public Action<int, int> onUpdateScore;
 
     }
 }

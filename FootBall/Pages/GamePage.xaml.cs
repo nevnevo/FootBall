@@ -22,6 +22,7 @@ namespace FootBall.Pages
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
+    
     public sealed partial class GamePage : Page
     {
         private GameManager Manager;
@@ -33,6 +34,12 @@ namespace FootBall.Pages
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             Manager = new GameManager(fieldCanvas);
+            GameManager.GameEvents.onUpdateScore += Update;
     }
+        private void Update(int arg1, int arg2)
+        {
+            FirstGroupScore.Text = arg1.ToString();
+            SecondGroupScore.Text = arg2.ToString();
+        }
     }
 }

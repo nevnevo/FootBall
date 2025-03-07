@@ -15,6 +15,9 @@ namespace FootBall.Objects
 
     {
         private Random rnd = new Random();
+        private int pointsRightPlayer;
+        private int pointsLeftPlayer;
+
         public Ball(double x, double y, string fileName, Canvas field, double size) : base(x, y, fileName, field, size)
         {
             
@@ -53,7 +56,7 @@ namespace FootBall.Objects
             else
                 _accelerationY = 0;
 
-            
+
         }
 
         public void SetSpeed(double speedX, double speedY)
@@ -64,5 +67,26 @@ namespace FootBall.Objects
             _speedX = speedX * Constants.KickStrength;
             _speedY = speedY * Constants.KickStrength;
         }
+
+        public override void Collide(GameObject otherObject)
+        {
+            if(otherObject is Goal goal)
+            {
+                if (goal.Direction == Goal.DirectionType.Left)
+                    pointsRightPlayer++;
+                else
+                {
+                    pointsLeftPlayer++;
+                }
+                _x = _field.ActualWidth / 2 - 30;
+                _y = _field.ActualHeight / 2 - 50;
+                if (GameManager.GameEvents.onUpdateScore != null)
+
+                    GameManager.GameEvents.onUpdateScore(pointsLeftPlayer, pointsRightPlayer);
+
+
+            }
+        }
+
     }
 }
