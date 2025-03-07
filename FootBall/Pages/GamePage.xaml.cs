@@ -25,7 +25,9 @@ namespace FootBall.Pages
     
     public sealed partial class GamePage : Page
     {
+        private int seconds = 1;
         private GameManager Manager;
+        private DispatcherTimer _countTimer;
         public GamePage()
         {
             this.InitializeComponent();
@@ -33,13 +35,28 @@ namespace FootBall.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            
             Manager = new GameManager(fieldCanvas);
             GameManager.GameEvents.onUpdateScore += Update;
-    }
+            _countTimer = new DispatcherTimer();
+            _countTimer.Interval = TimeSpan.FromSeconds(1);
+            _countTimer.Start();
+            _countTimer.Tick += _countTimer_Tick;
+        }
         private void Update(int arg1, int arg2)
         {
             FirstGroupScore.Text = arg1.ToString();
             SecondGroupScore.Text = arg2.ToString();
+        }
+        private void _countTimer_Tick(object sender, object e)
+        {
+            
+            countTimer.Text = seconds.ToString();
+            seconds--;
+            if (seconds == 0)
+                bananaGrid.Visibility = Visibility.Visible;
+            
+
         }
     }
 }

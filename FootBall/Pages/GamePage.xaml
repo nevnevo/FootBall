@@ -57,6 +57,7 @@
         <TextBlock x:Name ="SecondGroupScore" Text=" :" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="1" FontSize="60"  Foreground="Black"></TextBlock>
         <TextBlock Text="S2" Grid.Row="0" Grid.Column="8" Grid.ColumnSpan="1" FontSize="60"  Foreground="Black"></TextBlock>
         <TextBlock Text="Group2" Grid.Row="0" Grid.Column="9" Grid.ColumnSpan="3" FontSize="60" Foreground="Black"></TextBlock>
+        <TextBlock x:Name="countTimer"  Text="90" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1" FontSize="60" Foreground="Black"></TextBlock>
 
         <Canvas x:Name="fieldCanvas" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="12" Grid.RowSpan="7">
             <Canvas.Background>
@@ -65,9 +66,33 @@
             
 
         </Canvas>
-       
-        
-        
+
+        <Grid x:Name="bananaGrid" Grid.Row="4" Grid.Column="3" Grid.RowSpan="7" Grid.ColumnSpan="7" Background="White" Visibility="Collapsed" >
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="message" Grid.ColumnSpan="4" Grid.Column="2" Text="Game Over!" FontSize="70" Grid.RowSpan="1"></TextBlock>
+            <TextBlock x:Name="between" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="3" Text="   :" FontSize="70" Grid.RowSpan="1"></TextBlock>
+            <TextBlock x:Name="FirstGroupText" Grid.ColumnSpan="3" Grid.Row="1" Grid.Column="1" Text="Group1" FontSize="70" Grid.RowSpan="1"></TextBlock>
+            <TextBlock x:Name="SecondGroupText" Grid.ColumnSpan="3" Grid.Row="1" Grid.Column="4" Text="Group2"  FontSize="70" Grid.RowSpan="1"></TextBlock>
+            <TextBlock x:Name="FirstGroupScoreFinal" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="2" Text="0"  FontSize="70" Grid.RowSpan="1"></TextBlock>
+            <TextBlock x:Name="SecondGroupScoreFinal" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="4" Text="    0" FontSize="70" Grid.RowSpan="1"></TextBlock>
+        </Grid>
+
 
     </Grid>
 </Page>

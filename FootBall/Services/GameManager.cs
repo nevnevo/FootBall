@@ -15,6 +15,7 @@ namespace FootBall.Services
         private Canvas _field;
         private List<GameObject> _gameObjects;
         private DispatcherTimer _runTimer;
+        
         public GameManager(Canvas field)
         
         {
@@ -22,6 +23,8 @@ namespace FootBall.Services
             _runTimer.Interval=TimeSpan.FromMilliseconds(1);
             _runTimer.Start();
             _runTimer.Tick+=_runTimer_Tick;
+
+            
 
 
             _field = field;
