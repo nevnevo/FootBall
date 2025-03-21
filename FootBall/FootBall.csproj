@@ -119,6 +119,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\LevelSelect.xaml.cs">
+      <DependentUpon>LevelSelect.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Objects\Ball.cs" />
     <Compile Include="Objects\Fan.cs" />
     <Compile Include="Objects\GameMovingObject.cs" />
@@ -138,6 +141,7 @@
     <Compile Include="Services\ControlKeys.cs" />
     <Compile Include="Services\GameEvents.cs" />
     <Compile Include="Services\GameManager.cs" />
+    <Compile Include="Services\Level.cs" />
     <Compile Include="Services\RectangleHelper.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -195,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Pages\LevelSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\GamePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

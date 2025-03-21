@@ -63,9 +63,9 @@ namespace FootBall.Objects
         {
             _x += speedX;
             _y += speedY;
-
-            _speedX = speedX * Constants.KickStrength;
-            _speedY = speedY * Constants.KickStrength;
+            
+            _speedX = speedX * Constants.KickStrength * GameManager.Level.ballSpeed;
+            _speedY = speedY * Constants.KickStrength* GameManager.Level.ballSpeed;
         }
 
         public override void Collide(GameObject otherObject)
@@ -78,8 +78,10 @@ namespace FootBall.Objects
                 {
                     pointsLeftPlayer++;
                 }
-                _x = _field.ActualWidth / 2 - 30;
-                _y = _field.ActualHeight / 2 - 50;
+                _x = 670; 
+                _y = 260;
+                _speedX = 0;
+                _speedY = 0;
                 if (GameManager.GameEvents.onUpdateScore != null)
 
                     GameManager.GameEvents.onUpdateScore(pointsLeftPlayer, pointsRightPlayer);

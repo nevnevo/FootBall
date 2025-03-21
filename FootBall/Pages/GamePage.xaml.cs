@@ -25,7 +25,7 @@ namespace FootBall.Pages
     
     public sealed partial class GamePage : Page
     {
-        private int seconds = 1;
+        private int seconds = Constants.totalTime;
         private GameManager Manager;
         private DispatcherTimer _countTimer;
         public GamePage()
@@ -47,6 +47,7 @@ namespace FootBall.Pages
         {
             FirstGroupScore.Text = arg1.ToString();
             SecondGroupScore.Text = arg2.ToString();
+            
         }
         private void _countTimer_Tick(object sender, object e)
         {
@@ -54,9 +55,22 @@ namespace FootBall.Pages
             countTimer.Text = seconds.ToString();
             seconds--;
             if (seconds == 0)
+            {
+                _countTimer.Stop();
+                FirstGroupScoreFinal.Text = FirstGroupScore.Text;
+                SecondGroupScoreFinal.Text = SecondGroupScore.Text;
                 bananaGrid.Visibility = Visibility.Visible;
+            }
+
+                
             
 
+        }
+
+        private void rtMenu_Click(object sender, RoutedEventArgs e)
+        {
+            bananaGrid.Visibility = Visibility.Collapsed;
+            Frame.Navigate(typeof(MainPage));
         }
     }
 }

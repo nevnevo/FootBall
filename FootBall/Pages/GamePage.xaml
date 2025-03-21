@@ -8,16 +8,8 @@
     mc:Ignorable="d"
     Loaded="Page_Loaded"
     Background="AliceBlue">
-    
-
 
     <Grid>
-
-
-
-
-
-
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -31,7 +23,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-            
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -48,23 +40,37 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        
-        
 
         <Image Source="/Assets/Images/clock.png" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" Height="200"></Image>
-        <TextBlock Text="Group1" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" FontSize="60" Foreground="Black"></TextBlock>
-        <TextBlock x:Name ="FirstGroupScore" Text="S1" Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="1" FontSize="60"  Foreground="Black"></TextBlock>
-        <TextBlock x:Name ="SecondGroupScore" Text=" :" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="1" FontSize="60"  Foreground="Black"></TextBlock>
-        <TextBlock Text="S2" Grid.Row="0" Grid.Column="8" Grid.ColumnSpan="1" FontSize="60"  Foreground="Black"></TextBlock>
-        <TextBlock Text="Group2" Grid.Row="0" Grid.Column="9" Grid.ColumnSpan="3" FontSize="60" Foreground="Black"></TextBlock>
-        <TextBlock x:Name="countTimer"  Text="90" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1" FontSize="60" Foreground="Black"></TextBlock>
+
+        <Viewbox Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" Stretch="Uniform">
+            <TextBlock Text="Group1" Foreground="Black"></TextBlock>
+        </Viewbox>
+
+        <Viewbox Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="1" Stretch="Uniform">
+            <TextBlock x:Name="FirstGroupScore" Text="0" Foreground="Black"></TextBlock>
+        </Viewbox>
+
+        <Viewbox Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="1" Stretch="Uniform">
+            <TextBlock x:Name="SecondGroupScore" Text=" :" Foreground="Black"></TextBlock>
+        </Viewbox>
+
+        <Viewbox Grid.Row="0" Grid.Column="8" Grid.ColumnSpan="1" Stretch="Uniform">
+            <TextBlock Text="0" Foreground="Black"></TextBlock>
+        </Viewbox>
+
+        <Viewbox Grid.Row="0" Grid.Column="9" Grid.ColumnSpan="3" Stretch="Uniform">
+            <TextBlock Text="Group2" Foreground="Black"></TextBlock>
+        </Viewbox>
+
+        <Viewbox Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1" Stretch="Uniform">
+            <TextBlock x:Name="countTimer" Text="90" Foreground="Black"></TextBlock>
+        </Viewbox>
 
         <Canvas x:Name="fieldCanvas" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="12" Grid.RowSpan="7">
             <Canvas.Background>
                 <ImageBrush ImageSource="/Assets/Images/fieldImg.jpeg"></ImageBrush>
             </Canvas.Background>
-            
-
         </Canvas>
 
         <Grid x:Name="bananaGrid" Grid.Row="4" Grid.Column="3" Grid.RowSpan="7" Grid.ColumnSpan="7" Background="White" Visibility="Collapsed" >
@@ -85,14 +91,33 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <TextBlock x:Name="message" Grid.ColumnSpan="4" Grid.Column="2" Text="Game Over!" FontSize="70" Grid.RowSpan="1"></TextBlock>
-            <TextBlock x:Name="between" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="3" Text="   :" FontSize="70" Grid.RowSpan="1"></TextBlock>
-            <TextBlock x:Name="FirstGroupText" Grid.ColumnSpan="3" Grid.Row="1" Grid.Column="1" Text="Group1" FontSize="70" Grid.RowSpan="1"></TextBlock>
-            <TextBlock x:Name="SecondGroupText" Grid.ColumnSpan="3" Grid.Row="1" Grid.Column="4" Text="Group2"  FontSize="70" Grid.RowSpan="1"></TextBlock>
-            <TextBlock x:Name="FirstGroupScoreFinal" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="2" Text="0"  FontSize="70" Grid.RowSpan="1"></TextBlock>
-            <TextBlock x:Name="SecondGroupScoreFinal" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="4" Text="    0" FontSize="70" Grid.RowSpan="1"></TextBlock>
+            <Viewbox Grid.ColumnSpan="4" Grid.Column="2" Grid.RowSpan="1" Stretch="Uniform">
+                <TextBlock x:Name="message" Text="Game Over!"></TextBlock>
+            </Viewbox>
+
+            <Viewbox Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="3" Grid.RowSpan="1" Stretch="Uniform">
+                <TextBlock x:Name="between" Text="   :"></TextBlock>
+            </Viewbox>
+
+            <Viewbox Grid.ColumnSpan="3" Grid.Row="1" Grid.Column="1" Grid.RowSpan="1" Stretch="Uniform">
+                <TextBlock x:Name="FirstGroupText" Text="Group1"></TextBlock>
+            </Viewbox>
+
+            <Viewbox Grid.ColumnSpan="3" Grid.Row="1" Grid.Column="4" Grid.RowSpan="1" Stretch="Uniform">
+                <TextBlock x:Name="SecondGroupText" Text="Group2"></TextBlock>
+            </Viewbox>
+
+            <Viewbox Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="2" Grid.RowSpan="1" Stretch="Uniform">
+                <TextBlock x:Name="FirstGroupScoreFinal" Text="0"></TextBlock>
+            </Viewbox>
+
+            <Viewbox Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="4" Grid.RowSpan="1" Stretch="Uniform">
+                <TextBlock x:Name="SecondGroupScoreFinal" Text="    0"></TextBlock>
+            </Viewbox>
+
+            <Viewbox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="3" Stretch="Uniform">
+                <Button x:Name="rtMenu" Content="Return To Menu" Click="rtMenu_Click"></Button>
+            </Viewbox>
         </Grid>
-
-
     </Grid>
 </Page>
